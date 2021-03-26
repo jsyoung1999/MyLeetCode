@@ -1,5 +1,6 @@
 # 刷题记录
 |题目                                                                           |数据结构        |技巧或算法          |
+| --------   | -----:   | :----: |
 |[21.合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)|链表            |dummyNode              |
 |[83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)|链表||
 |[82. 删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/)|链表|dummyNode |
