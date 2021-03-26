@@ -41,7 +41,8 @@ LeetCode当中，链表的题目大多是单链表（single-linked list），故
             return slow;
       }
 
-可用于O(1)空间复杂度判断回文链表 [234.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/)  
+可用于O(1)空间复杂度判断回文链表   
+[234.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/)  
 
 #### 判断链表是否有环
 算法：Floyd判圈法，由称龟兔赛跑算法。[wiki链接](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)  
@@ -58,7 +59,35 @@ i = 2i - i = (b - a)n，为圈数的整数倍。
 将其中一个指针(不妨为slow)放到链头，两指针以相同速度前进，当前进m步时，slow距离链头m,fast距离链头i + m,i 为圈的整数倍，故slow和fast再次相遇，相遇的位置即为环的起点。  
 将其中一个指针原地不动，另一指针(不妨为slow)以速度1前进，当再次相遇时，slow移动的距离即为环的长度。  
 
+      int m = 0;//环起始位置
+      int n = 0;//环长
+      public boolean hasCycle(ListNode head) {
+            if(head == null || head.next == null) return false;
+            ListNode slow = head, fast = head;
+            do{
+                  if(fast == null || fast.next == null) return false;
+                  slow = slow.next;
+                  fast = fast.next.next;
+               }while(slow != fast);
+            
+            do{
+                  slow = slow.next;
+                  m++;
+               }while(slow != fast);
+               
+            slow = head;
+            do{
+                  slow = slow.next;
+                  fast = fast.next;
+                  n++;
+               }while(slow != fast);
+            return true;
+         }
 
+[141.环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)  
+[142.环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+### 链表反转
+                  
 
 
       
